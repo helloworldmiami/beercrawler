@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Route-Beer</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>Route-Beer</title>
+        <%= csrf_meta_tags %>
 
-  <!-- Materialize Template -->
-    <!-- CSS  -->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!-- <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <!-- Materialize Template -->
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
 
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <!--  Scripts-->
-      <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <!--  Scripts-->
+        <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="js/materialize.js"></script>
       <script src="js/init.js"></script> -->
 
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-    <%= yield %>
-  </body>
+    <body>
+        <% if current_user %>
+        Signed in as
+        <%= current_user.first_name %>
+        |
+        <%= link_to "Logout", '/logout' %>
+    <% else %>
+        <%= link_to 'Login', '/login' %>
+        |
+        <%= link_to 'Signup', '/signup' %>
+        <% end %>
+        <%= yield %>
+    </body>
 </html>
