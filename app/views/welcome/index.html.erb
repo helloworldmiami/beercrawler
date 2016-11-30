@@ -1,93 +1,66 @@
+<%= render 'nav' %>
 
-  <!-- <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav> -->
-
-
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Browse Routes</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Browse Routes</a></li>
-        </ul>
-      </div>
-    </nav>
-
-  <div id="index-banner" class="parallax-container">
+<div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">Route-Beer</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">Find or plan your route for a night of responsible drinking</h5>
-        </div>
-        <div class="row center">
-          <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Sign Up Today!</a>
-        </div>
-        <br><br>
+        <div class="container">
+            <br><br>
+            <h1 class="header center teal-text text-lighten-2">Route-Beer</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Find or plan your route for a night of responsible drinking</h5>
+            </div>
+            <div class="row center">
+                <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Sign Up Today!</a>
+            </div>
+            <br><br>
 
-      </div>
+        </div>
     </div>
     <div class="parallax"><%= image_tag('group-bar.jpg') %></div>
-  </div>
+</div>
 
-
-  <div class="container">
+<div class="container">
     <div class="section">
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">location_on</i></h2>
-            <h5 class="center">Plan Your Own</h5>
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text">
+                        <i class="material-icons">location_on</i>
+                    </h2>
+                    <h5 class="center">Plan Your Own</h5>
 
-            <p class="light">By searching through the map, you can add or delete your choice of bars to your route.</p>
-          </div>
+                    <p class="light">By searching through the map, you can add or delete your choice of bars to your route.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text">
+                        <i class="material-icons">group</i>
+                    </h2>
+                    <h5 class="center">Popular Routes</h5>
+
+                    <p class="light">New to a location and not sure of where to go? Browse through popular routes to get your night started.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text">
+                        <i class="material-icons">settings</i>
+                    </h2>
+                    <h5 class="center">Fast and Easy</h5>
+
+                    <p class="light">We provided the tools needed to make your search simple, fast, and easy.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Popular Routes</h5>
-
-            <p class="light">New to a location and not sure of where to go? Browse through popular routes to get your night started.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Fast and Easy</h5>
-
-            <p class="light">We provided the tools needed to make your search simple, fast, and easy.</p>
-          </div>
-        </div>
-      </div>
-      <!--  End Icon Section   -->
+        <!--  End Icon Section   -->
     </div>
-  </div>
+</div>
 
-
-  <!-- <div class="parallax-container valign-wrapper">
+<!-- <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
@@ -112,48 +85,59 @@
     </div>
   </div> -->
 
-
-  <div class="parallax-container valign-wrapper">
+<div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">When in doubt, find your route.</h5>
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">When in doubt, find your route.</h5>
+            </div>
         </div>
-      </div>
     </div>
     <div class="parallax"><%= image_tag('graffiti-street.jpg') %></div>
-  </div>
+</div>
 
-  <footer class="page-footer teal">
+<footer class="page-footer teal">
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">About Us</h5>
-          <p class="grey-text text-lighten-4">We are a team of Wyncoders working on this project full time. Any amount of support for continuing development is greatly appreciated. If you would like to contribute, please reach out to us.</p>
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">About Us</h5>
+                <p class="grey-text text-lighten-4">We are a team of Wyncoders working on this project full time. Any amount of support for continuing development is greatly appreciated. If you would like to contribute, please reach out to us.</p>
 
-
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Contact</h5>
+                <ul>
+                    <li>
+                        <a class="white-text" href="#!">Advertise</a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="#!">Creators</a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="#!">Contribute</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Social</h5>
+                <ul>
+                    <li>
+                        <a class="white-text" href="#!">Facebook</a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="#!">Twitter</a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="#!">Instagram</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Contact</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Advertise</a></li>
-            <li><a class="white-text" href="#!">Creators</a></li>
-            <li><a class="white-text" href="#!">Contribute</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Social</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Facebook</a></li>
-            <li><a class="white-text" href="#!">Twitter</a></li>
-            <li><a class="white-text" href="#!">Instagram</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
+        <div class="container">
+            Made by
+            <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
     </div>
-  </footer>
+</footer>
