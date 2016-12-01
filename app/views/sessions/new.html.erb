@@ -1,14 +1,16 @@
 <%= render 'nav' %>
 <br>
-<h5>Login</h5>
-<br>
-<%= form_tag '/login' do %>
+<div class="container">
+  <h5>Login</h5>
+  <br>
+  <%= form_tag '/login' do %>
 
   Email: <%= text_field_tag :email %>
   Password: <%= password_field_tag :password %>
   <%= submit_tag "Submit" %>
 
-<% end %>
+  <% end %>
+</div>
 <br>
 <br>
 <%= render 'footer' %>
