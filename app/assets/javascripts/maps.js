@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+function initMap() {
+var directionsService = new google.maps.DirectionsService;
+var directionsDisplay = new google.maps.DirectionsRenderer;
+var map = new google.maps.Map(document.getElementById('map'), {
+  zoom: 16,
+  center: {lat: 25.8002131, lng: -80.2043848}
+});
+directionsDisplay.setMap(map);
+}
