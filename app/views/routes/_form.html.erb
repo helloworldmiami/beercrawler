@@ -21,15 +21,7 @@
     <%= f.text_area :description %>
   </div>
 
-  <div class="field">
-    <%= f.label :rating %>
-    <%= f.number_field :rating %>
-  </div>
-
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div>
+<%= f.hidden_field :user_id, value: @user.id %>
 
   <div class="actions">
     <%= f.submit %>

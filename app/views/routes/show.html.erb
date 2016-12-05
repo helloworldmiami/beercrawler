@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/jsmap' %>
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -18,7 +21,12 @@
 <p>
   <strong>User:</strong>
   <%= @route.user %>
+  <!-- why doesn't this work -->
+  <%= @route.bars.to_a.each { |x| x.name } %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %>
+</div>

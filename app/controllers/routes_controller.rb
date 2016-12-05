@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize, only: [:create, :new]
+  before_filter :authorize, only: [:create, :new, :edit]
   # GET /routes
   # GET /routes.json
   def index
@@ -15,10 +15,25 @@ class RoutesController < ApplicationController
   # GET /routes/new
   def new
     @route = Route.new
+    @user = @current_user
   end
 
   # GET /routes/1/edit
   def edit
+    @user = @current_user
+    @routeId = gon.routeId
+    gon.routeId = @route.id
+  end
+
+  def bars
+      # @bar_route = BarRoute.new(bar_id: params['bar_id'],
+      #                route_id: params['route_id'])
+      #                if @bar_route.save
+      #                  render :json => { bar_id: params['bar_id'],
+      #                                 route_id: params['route_id'] }
+      #                else
+      #                  render :json => {}, :status => 500
+      #                end
   end
 
   # POST /routes

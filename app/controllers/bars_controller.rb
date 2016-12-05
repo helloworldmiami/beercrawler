@@ -1,6 +1,7 @@
 class BarsController < ApplicationController
   before_action :set_bar, only: [:show, :edit, :update, :destroy]
 
+
   # GET /bars
   # GET /bars.json
   def index
@@ -15,6 +16,7 @@ class BarsController < ApplicationController
   # GET /bars/new
   def new
     @bar = Bar.new
+
   end
 
   # GET /bars/1/edit
@@ -24,17 +26,24 @@ class BarsController < ApplicationController
   # POST /bars
   # POST /bars.json
   def create
-    @bar = Bar.new(bar_params)
-
-    respond_to do |format|
-      if @bar.save
-        format.html { redirect_to @bar, notice: 'Bar was successfully created.' }
-        format.json { render :show, status: :created, location: @bar }
-      else
-        format.html { render :new }
-        format.json { render json: @bar.errors, status: :unprocessable_entity }
-      end
-    end
+    @bar = Bar.new(name: params['name'],
+                   address: params['address'],
+                   place_id: params['place_id'])
+                   if @bar.save
+                     render :json => { name: params['name'], address: params['address'], place_id: params['place_id'], id: params['id']}
+                   else
+                     render :json => {}, :status => 500
+                   end
+    #
+    # respond_to do |format|
+    #   if @bar.save
+    #     format.html { redirect_to @bar, notice: 'Bar was successfully created.' }
+    #     format.json { render :show, status: :created, location: @bar }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @bar.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /bars/1
@@ -69,6 +78,6 @@ class BarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bar_params
-      params.require(:bar).permit(:name, :address, :place_id, :description, :rating)
+      params.require(:bar).permit(:name, :address, :place_id)
     end
 end
