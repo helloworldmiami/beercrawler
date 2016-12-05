@@ -30,7 +30,7 @@ class BarsController < ApplicationController
                    address: params['address'],
                    place_id: params['place_id'])
                    if @bar.save
-                     render :json => { name: params['name'], address: params['address'], place_id: params['place_id']}
+                     render :json => { name: params['name'], address: params['address'], place_id: params['place_id'], id: params['id']}
                    else
                      render :json => {}, :status => 500
                    end
