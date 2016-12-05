@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/jsmap' %>
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -26,3 +29,4 @@
 
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %>
+</div>

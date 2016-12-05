@@ -21,6 +21,19 @@ class RoutesController < ApplicationController
   # GET /routes/1/edit
   def edit
     @user = @current_user
+    @routeId = gon.routeId
+    gon.routeId = @route.id
+  end
+
+  def bars
+      # @bar_route = BarRoute.new(bar_id: params['bar_id'],
+      #                route_id: params['route_id'])
+      #                if @bar_route.save
+      #                  render :json => { bar_id: params['bar_id'],
+      #                                 route_id: params['route_id'] }
+      #                else
+      #                  render :json => {}, :status => 500
+      #                end
   end
 
   # POST /routes

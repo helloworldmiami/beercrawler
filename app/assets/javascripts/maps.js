@@ -12,7 +12,8 @@ function mapNew(position){
               lng: pos.long
           },
           zoom: 12,
-          mapTypeId: 'roadmap'
+          mapTypeId: 'roadmap',
+          scrollwheel: false
       });
 
     // getPost();
@@ -125,12 +126,24 @@ function mapNew(position){
                       url: "/bars",
                       data: { name: place.name, place_id: place.place_id, address: place.formatted_address },
                       success: function() {
-                        $('#bar-btn').html('Successfully Added!');
+                        console.log('Successfully Added!');
                       },
                       error: function() {
-                        $('#bar-btn').html('Bar Already Exists!');
+                        console.log('Bar Already Exists!');
                       }
                     });
+                    // $.ajax({
+                    //   type: "POST",
+                    //   url: "routes/bars",
+                    //   data: { bar_id: "", route_id: gon.routeId },
+                    //   success: function() {
+                    //     $('#bar-btn').html('Successfully Added!');
+                    //   },
+                    //   error: function() {
+                    //     $('#bar-btn').html('Bar Already Exists!');
+                    //   }
+                    // });
+
                   });
               });
 
@@ -148,6 +161,7 @@ function mapNew(position){
 }
 
 function initMap() {
+
 if(navigator.geolocation){
   navigator.geolocation.getCurrentPosition(mapNew);
 }
