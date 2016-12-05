@@ -1,17 +1,3 @@
-// function getPos(){
-//   // console.log("getPos() called from initMap()");
-//   return navigator.geolocation.getCurrentPosition(myPos);
-// }
-//
-// function myPos(position){
-//   // console.log("position");
-//   // console.log(position);
-//   // lat =  position.coords.latitude);
-//   // long= position.coords.longitude);
-//
-// }
-
-
 function mapNew(position){
 
   var pos = {
