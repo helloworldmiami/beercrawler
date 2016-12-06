@@ -1,5 +1,4 @@
 function mapNew(position){
-
   var pos = {
     lat:position.coords.latitude,
     long:position.coords.longitude
@@ -12,8 +11,7 @@ function mapNew(position){
               lng: pos.long
           },
           zoom: 12,
-          mapTypeId: 'roadmap',
-          scrollwheel: false
+          mapTypeId: 'roadmap'
       });
 
     // getPost();
@@ -82,7 +80,6 @@ function mapNew(position){
               });
 
 
-
               // Set the content for each marker
               var contentString = '<span style="font-weight:900;font-size:18px;">' +
                   place.name +
@@ -124,25 +121,15 @@ function mapNew(position){
                     $.ajax({
                       type: "POST",
                       url: "/bars",
-                      data: { name: place.name, place_id: place.place_id, address: place.formatted_address },
-                      success: function() {
-                        console.log('Successfully Added!');
+                      data: { name: place.name, place_id: place.place_id, address: place.formatted_address, route_id: parseInt($('#route_id').data('routeid'))},
+                      success: function(data) {
+                        $('#bar-btn').html('Successfully Added!');
+                        data.bar_id
                       },
                       error: function() {
-                        console.log('Bar Already Exists!');
+                        $('#bar-btn').html('Bar Already Exists!');
                       }
                     });
-                    // $.ajax({
-                    //   type: "POST",
-                    //   url: "routes/bars",
-                    //   data: { bar_id: "", route_id: gon.routeId },
-                    //   success: function() {
-                    //     $('#bar-btn').html('Successfully Added!');
-                    //   },
-                    //   error: function() {
-                    //     $('#bar-btn').html('Bar Already Exists!');
-                    //   }
-                    // });
 
                   });
               });

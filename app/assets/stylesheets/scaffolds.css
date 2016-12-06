@@ -87,3 +87,106 @@ div {
 label {
   display: block;
 }*/
+
+.font-beerio, h1 {
+  font-family: 'Righteous', cursive;
+}
+
+.slim {
+    max-width: 700px;
+    margin:0 auto;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 3px solid #2196F3;
+  box-shadow:none;
+}
+
+input:hover {
+  border-bottom:2px solid #ffdb01;
+}
+
+
+/*====== \ CUSTOM BUTTON ======*/
+.btn-beerio {
+    background-color:#ffc001;
+}
+
+.btn-beerio:hover {
+    background-color:#ffdc01;
+}
+/*====== / CUSTOM BUTTON ======*/
+
+/*====== \ NAVIGATOR STYLING ======*/
+nav {
+    background-color:none;
+}
+
+.nav-wrapper {
+    background-color:#fff!important;
+    border-bottom: 10px solid #ffdb01;
+}
+
+.nav-wrapper img {
+    padding:7px;
+}
+
+.nav-wrapper .signup {
+    background-color:#ffc001!important;
+    color:#fff!important;
+}
+
+.nav-wrapper .signup:hover {
+    background-color:#ffdb01!important;
+}
+
+.nav-wrapper {
+    border-bottom:10px solid #ffdb01;
+}
+
+.parallax-container {
+    border-top:4px solid #ffc001;
+    background: rgba(0,0,0,0.5);
+}
+
+nav ul a:hover {
+    background-color: rgba(160, 160, 160, 0.1);
+}
+
+nav ul a, nav .brand-logo {
+    color: #575757;
+}
+/*====== / NAVIGATOR STYLING ======*/
+
+/*====== \ FOOTER STYLING ======*/
+.beerio-footer {
+    background-color: #ffc001!important;
+}
+
+footer.page-footer .footer-copyright {
+    background-color: #ffdb01;
+}
+/*====== / FOOTER STYLING ======*/
+
+/*====== \ PROJECT PARTIAL ======*/
+
+.project_beerio img{
+  max-width:250px;
+  margin:0 auto;
+  display:block;
+}
+
+.project_beerio h3 {
+  font-size:42px;
+  text-align:center;
+}
+
+.beerio-yellow {
+  color:#ffc001;
+}
+
+.beerio-blue {
+  color:#48befe;
+}
+
+/*====== / PROJECT PARTIAL ======*/
