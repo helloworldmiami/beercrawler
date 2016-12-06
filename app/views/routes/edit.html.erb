@@ -1,8 +1,9 @@
 <%= render 'layouts/jsmap' %>
-
+<data id='route_id' class='hidden' data-routeId='<%= @route.id %>' >
 <div class="container">
 <%= render 'form', route: @route %>
 <br/>
+<%= @route.id %>
 <%= link_to 'Show', @route %> |
 <%= link_to 'Back', routes_path %>
 </div>

@@ -1,6 +1,6 @@
 <nav>
     <div class="nav-wrapper">
-        <a href="/" class="brand-logo">Logo</a>
+        <a href="/" class="brand-logo"><%= image_tag('routebeerio_sml.png') %></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse">
             <i class="material-icons">menu</i>
         </a>
@@ -15,10 +15,10 @@
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <% if current_user.nil? %>
-          <li><%= link_to 'Log In', login_path %></li>
-          <li><%= link_to 'Sign Up', signup_path %></li>
+          <li class="signup"><%= link_to 'Log In', login_path %></li>
+          <li class="signup"><%= link_to 'Sign Up', signup_path %></li>
       <% else %>
-          <li><%= link_to 'Log Out', logout_path %></li>
+          <li class="signup"><%= link_to 'Log Out', logout_path %></li>
           <% end %>
           <li><%= link_to 'Browse Routes', routes_path %></li>
       </ul>

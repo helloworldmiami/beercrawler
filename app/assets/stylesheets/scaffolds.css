@@ -87,3 +87,40 @@ div {
 label {
   display: block;
 }*/
+
+
+/*====== \ NAVIGATOR STYLING ======*/
+nav {
+    background-color:none;
+}
+
+.nav-wrapper {
+    background-color:#fff!important;
+    border-bottom: 10px solid #ffdb01;
+}
+
+.nav-wrapper img {
+    padding:7px;
+}
+
+.nav-wrapper .signup {
+    background-color:#ffc001!important;
+    color:#fff!important;
+}
+
+.nav-wrapper {
+    border-bottom:10px solid #ffdb01;
+}
+
+.parallax-container {
+    border-top:4px solid #ffc001;
+}
+
+nav ul a:hover {
+    background-color: rgba(160, 160, 160, 0.1);
+}
+
+nav ul a, nav .brand-logo {
+    color: #575757;
+}
+/*====== / NAVIGATOR STYLING ======*/

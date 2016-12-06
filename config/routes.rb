@@ -12,13 +12,17 @@ Rails.application.routes.draw do
   get 'session/destroy'
 
   resources :bars
-  resources :routes
+
+
+  resources :routes do
+    resources :bars
+  end
   resources :users
   get 'maps/index'
 
   get 'welcome/index'
   root 'welcome#index'
-  
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'

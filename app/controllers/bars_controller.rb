@@ -1,5 +1,6 @@
 class BarsController < ApplicationController
   before_action :set_bar, only: [:show, :edit, :update, :destroy]
+  before_action :set_route, only: [:create]
 
 
   # GET /bars
@@ -16,7 +17,6 @@ class BarsController < ApplicationController
   # GET /bars/new
   def new
     @bar = Bar.new
-
   end
 
   # GET /bars/1/edit
@@ -26,14 +26,21 @@ class BarsController < ApplicationController
   # POST /bars
   # POST /bars.json
   def create
-    @bar = Bar.new(name: params['name'],
-                   address: params['address'],
-                   place_id: params['place_id'])
-                   if @bar.save
-                     render :json => { name: params['name'], address: params['address'], place_id: params['place_id'], id: params['id']}
-                   else
-                     render :json => {}, :status => 500
-                   end
+    @bar = @route.bars.new(name: params['name'],
+                           address: params['address'],
+                           place_id: params['place_id'])
+    respond_to do |format|
+      if @bar.save
+        format.json { render json: { name: @bar.name, address: @bar.address, place_id: @bar.place_id, bar_id: @bar.id },
+                             status: :ok}
+        # render :json => { name: @bar.name, address: @bar.address, place_id: @bar.place_id, bar_id: @bar.id }, :status => 201
+      else
+        # render :json => {}, :status => 500
+        format.json {render status: 500}
+      end
+    end
+
+
     #
     # respond_to do |format|
     #   if @bar.save
@@ -74,6 +81,10 @@ class BarsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_bar
       @bar = Bar.find(params[:id])
+    end
+
+    def set_route
+      @route = Route.find(params[:route_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

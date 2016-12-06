@@ -21,19 +21,8 @@ class RoutesController < ApplicationController
   # GET /routes/1/edit
   def edit
     @user = @current_user
-    @routeId = gon.routeId
     gon.routeId = @route.id
-  end
-
-  def bars
-      # @bar_route = BarRoute.new(bar_id: params['bar_id'],
-      #                route_id: params['route_id'])
-      #                if @bar_route.save
-      #                  render :json => { bar_id: params['bar_id'],
-      #                                 route_id: params['route_id'] }
-      #                else
-      #                  render :json => {}, :status => 500
-      #                end
+    @routeId = gon.routeId
   end
 
   # POST /routes
@@ -43,13 +32,14 @@ class RoutesController < ApplicationController
 
     respond_to do |format|
       if @route.save
-        format.html { redirect_to @route, notice: 'Route was successfully created.' }
+        format.html { redirect_to edit_route_path(@route.id), notice: 'Route was successfully created.' }
         format.json { render :show, status: :created, location: @route }
       else
         format.html { render :new }
         format.json { render json: @route.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /routes/1
