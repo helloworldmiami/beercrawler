@@ -88,6 +88,10 @@ label {
   display: block;
 }*/
 
+.font-beerio, h1 {
+  font-family: 'Righteous', cursive;
+}
+
 
 /*====== \ NAVIGATOR STYLING ======*/
 nav {
@@ -108,12 +112,18 @@ nav {
     color:#fff!important;
 }
 
+.nav-wrapper .signup:hover {
+    background-color:#ffdb01!important;
+}
+
 .nav-wrapper {
     border-bottom:10px solid #ffdb01;
 }
 
 .parallax-container {
     border-top:4px solid #ffc001;
+    background: rgba(0,0,0,0.5);
+    min-height: 400px;
 }
 
 nav ul a:hover {
@@ -124,3 +134,13 @@ nav ul a, nav .brand-logo {
     color: #575757;
 }
 /*====== / NAVIGATOR STYLING ======*/
+
+/*====== \ FOOTER STYLING ======*/
+.beerio-footer {
+    background-color: #ffc001!important;
+}
+
+footer.page-footer .footer-copyright {
+    background-color: #ffdb01;
+}
+/*====== / FOOTER STYLING ======*/
