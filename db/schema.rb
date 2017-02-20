@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20161203020810) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bar_routes", force: :cascade do |t|
     t.integer  "bar_id"
     t.integer  "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bar_id"], name: "index_bar_routes_on_bar_id"
-    t.index ["route_id"], name: "index_bar_routes_on_route_id"
+    t.index ["bar_id"], name: "index_bar_routes_on_bar_id", using: :btree
+    t.index ["route_id"], name: "index_bar_routes_on_route_id", using: :btree
   end
 
   create_table "bars", force: :cascade do |t|
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20161203020810) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_routes_on_user_id"
+    t.index ["user_id"], name: "index_routes_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,4 +52,7 @@ ActiveRecord::Schema.define(version: 20161203020810) do
     t.string   "password_digest"
   end
 
+  add_foreign_key "bar_routes", "bars"
+  add_foreign_key "bar_routes", "routes"
+  add_foreign_key "routes", "users"
 end
